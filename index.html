@@ -75,7 +75,10 @@
   h1 { font-weight:800; font-size:clamp(2.4rem,5vw,4.2rem); line-height:1.08; margin-bottom:20px; letter-spacing:-1px; }
   h1 em { font-style:normal; color:var(--green); }
   .hero-sub { color:var(--muted); font-size:1.1rem; line-height:1.7; max-width:560px; margin-bottom:30px; }
-  .refund-guarantee { display:inline-flex; align-items:center; gap:6px; font-size:0.82rem; color:rgba(255,255,255,0.4); font-weight:500; margin-bottom:30px; }
+  
+  /* 200% REFUND PROUD BADGE (HERO SECTION) */
+  .refund-guarantee { display:inline-flex; align-items:center; gap:8px; font-size:0.9rem; color:var(--gold); font-weight:700; margin-bottom:30px; background:rgba(245,200,66,0.1); padding:8px 16px; border-radius:6px; border:1px solid rgba(245,200,66,0.3); }
+  
   .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
   .btn-primary { background:var(--green); color:#000; font-weight:700; font-size:0.95rem; padding:14px 30px; border-radius:8px; text-decoration:none; border:none; cursor:pointer; transition:all 0.2s; display:inline-flex; align-items:center; gap:8px; }
   .btn-primary:hover { background:var(--green2); transform:translateY(-2px); box-shadow:0 8px 30px rgba(0,232,122,0.25); }
@@ -243,7 +246,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <a href="#" class="logo">VST <span>●</span> <span class="logo-tag">VERY SIMPLE TRADER</span></a>
   <ul class="nav-links">
@@ -255,18 +257,18 @@
   <a href="https://wa.me/917015760414?text=Hi,%20I%20want%20to%20get%20access%20to%20the%20VST%20Bundle." class="nav-cta">Get Access →</a>
 </nav>
 
-<!-- TRADINGVIEW LIVE DATA TICKER (FREE, AUTOMATIC & BLENDED) -->
 <div class="ticker-wrap">
   <div class="tradingview-widget-container" style="width: 100%; height: 100%;">
     <div class="tradingview-widget-container__widget" style="height: 100%;"></div>
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
     {
     "symbols": [
-      { "proName": "NSE:NIFTY", "title": "NIFTY 50" },
-      { "proName": "NSE:BANKNIFTY", "title": "BANK NIFTY" },
       { "proName": "BSE:SENSEX", "title": "SENSEX" },
-      { "proName": "FX_IDC:XAUUSD", "title": "GOLD" },
-      { "proName": "FX:EURUSD", "title": "EUR/USD" }
+      { "proName": "BSE:RELIANCE", "title": "RELIANCE" },
+      { "proName": "BSE:HDFCBANK", "title": "HDFC BANK" },
+      { "proName": "BSE:TCS", "title": "TCS" },
+      { "proName": "BSE:INFY", "title": "INFOSYS" },
+      { "proName": "FX_IDC:XAUUSD", "title": "GOLD" }
     ],
     "showSymbolLogo": true,
     "isTransparent": false,
@@ -279,10 +281,16 @@
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
+  <div class="hero-chart" aria-hidden="true">
+    <div class="candle c-up"><div class="wick" style="height:30px"></div><div class="body c-up" style="height:50px;background:var(--green);opacity:0.6"></div><div class="wick" style="height:15px"></div></div>
+    <div class="candle c-dn"><div class="wick" style="height:20px"></div><div class="body" style="height:35px;background:var(--red);opacity:0.5"></div><div class="wick" style="height:25px"></div></div>
+    <div class="candle c-up"><div class="wick" style="height:15px"></div><div class="body" style="height:80px;background:var(--green);opacity:0.7"></div><div class="wick" style="height:10px"></div></div>
+    <div class="candle c-up"><div class="wick" style="height:18px"></div><div class="body" style="height:60px;background:var(--green);opacity:0.55"></div><div class="wick" style="height:20px"></div></div>
+    <div class="candle c-dn"><div class="wick" style="height:22px"></div><div class="body" style="height:40px;background:var(--red);opacity:0.5"></div><div class="wick" style="height:18px"></div></div>
+  </div>
 
   <div class="hero-inner">
     <div class="hero-badge fade-in">
@@ -297,9 +305,11 @@
     <p class="hero-sub fade-in delay-2">
       Learn institutional-level market reading with rules so simple, anyone can follow them. One Master Bundle for Indian F&O, Forex, and Equity.
     </p>
+    
     <div class="refund-guarantee fade-in delay-2">
       🛡️ Backed by our 200% Refund Guarantee*
     </div>
+    
     <div class="hero-btns fade-in delay-3">
       <a href="#course" class="btn-primary">📚 Get Master Bundle</a>
       <a href="#indicator" class="btn-ghost">📊 View Indicator</a>
@@ -312,7 +322,6 @@
   </div>
 </section>
 
-<!-- WHY VST -->
 <section class="why">
   <div class="section-header">
     <div class="section-label">Why Very Simple Trader</div>
@@ -338,7 +347,6 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials" id="reviews">
   <div class="section-header" style="text-align: center; margin-bottom: 40px;">
     <div class="section-label">Real Results</div>
@@ -346,7 +354,6 @@
   </div>
   <div class="testi-grid">
     
-    <!-- TESTIMONIAL 1 -->
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">"I was struggling with options buying for 2 years. VST's straightforward rules helped me cut out the noise. Currently paper trading and the accuracy is mind-blowing."</p>
@@ -359,7 +366,6 @@
       </div>
     </div>
 
-    <!-- TESTIMONIAL 2 (WHATSAPP SCREENSHOT SYSTEM) -->
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
       <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" alt="Profit Proof Screenshot" class="testi-screenshot">
@@ -373,7 +379,6 @@
       </div>
     </div>
 
-    <!-- TESTIMONIAL 3 -->
     <div class="testi-card">
       <div class="testi-stars">★★★★★</div>
       <p class="testi-text">"No fake promises, just pure charts and rules. The 200% refund logic gave me confidence, but the course content blew me away. Best investment for Forex."</p>
@@ -389,7 +394,6 @@
   </div>
 </section>
 
-<!-- COURSE -->
 <section class="course" id="course">
   <div class="section-header">
     <div class="section-label">VST Master Bundle</div>
@@ -474,7 +478,6 @@
   </div>
 </section>
 
-<!-- INDICATOR -->
 <section class="indicator" id="indicator">
   <div class="ind-grid">
     <div class="ind-visual">
@@ -540,7 +543,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-grid">
     <div class="about-visual">
@@ -561,7 +563,6 @@
   </div>
 </section>
 
-<!-- CTA STRIP -->
 <section class="cta-strip">
   <h2>Ready to trade <span>smarter</span>?</h2>
   <p>Join the VST community. Start with the Master Bundle or Indicator.</p>
@@ -570,7 +571,6 @@
   </div>
 </section>
 
-<!-- LEGAL & CORPORATE STYLE HIDDEN T&C (DIKHEGA BHI NAHI PAR WEBSITE PAR RAHEGA) -->
 <div class="legal-section">
   <div class="legal-grid">
     
@@ -591,7 +591,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">VST <span>●</span> Very Simple Trader</div>
@@ -604,7 +603,6 @@
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT BUTTON -->
 <a href="https://wa.me/917015760414?text=Hi,%20I%20came%20from%20the%20website!" class="wa-float" target="_blank" title="Chat on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
